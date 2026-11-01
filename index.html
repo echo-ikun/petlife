@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F6EFE2">
+  <title>宠物的一生 · 一爪一生</title>
+  <meta name="description" content="用十二分钟，陪一只动物过完它的一生。随机遇见一个家，做十一次选择，留下一张一生卡。">
+  <meta property="og:title" content="宠物的一生 · 一爪一生">
+  <meta property="og:description" content="它的一辈子，是你人生里的一小段。你的一小段，是它的一辈子。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/art/og.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/art/hero.jpg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#" data-nav="home" aria-label="宠物的一生，回到首页">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="9" cy="11" r="3.1"/><circle cx="16" cy="8" r="3.1"/><circle cx="23" cy="11" r="3.1"/>
+          <path d="M16 14.5c-4 0-7 3.1-7 6.1 0 2.3 1.9 3.6 4.2 3 1.9-.5 3.7-.5 5.6 0 2.3.6 4.2-.7 4.2-3 0-3-3-6.1-7-6.1Z"/>
+        </svg>
+        <span class="brand-text">宠物的一生<em>一爪一生</em></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <button data-nav="select">九种灵魂</button>
+        <button data-nav="memorial">回忆馆</button>
+        <button data-nav="about">关于</button>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="audio-btn" data-action="audio" aria-label="开关声音" title="开关声音">
+          <span class="audio-on">♪</span><span class="audio-off">×</span>
+        </button>
+        <button class="icon-btn menu-btn" data-action="menu" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <button data-nav="select">九种灵魂</button>
+      <button data-nav="memorial">回忆馆</button>
+      <button data-nav="about">关于</button>
+      <span class="mobile-menu-note">没有登录，没有广告。你的一生卡只留在这个浏览器里。</span>
+    </div>
+  </header>
+
+  <main id="app" class="app" aria-live="polite">
+    <div class="boot">正在铺开一张纸……</div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="modal" id="modal">
+    <div class="modal-card" id="modal-card"></div>
+  </dialog>
+
+  <dialog class="modal confirm" id="confirm">
+    <div class="modal-card confirm-card">
+      <h3 id="confirm-title">确定吗？</h3>
+      <p id="confirm-text"></p>
+      <div class="confirm-actions">
+        <button class="btn btn-ghost" data-confirm="no">再想想</button>
+        <button class="btn btn-primary" data-confirm="yes">确定</button>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript">这个小游戏需要 JavaScript 才能把一生走完。请打开它。</div>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/endings.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
